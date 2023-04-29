@@ -1,0 +1,28 @@
+.footerContentBox {
+  width: 82.5%;
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0px;
+  border: 1px solid #2874f0;
+}
+
+.appLinksBox {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.linkHeading {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.linkTypoTop {
+  margin-top: 20px;
+  color: white;
+}
+.linkTypo {
+  margin-top: 16px;
+  color: white;
+}
