@@ -3,7 +3,7 @@ import StarIcon from "@mui/icons-material/Star";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import SectionHeader from "../components/SectionHeader";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -11,6 +11,7 @@ import { addToCart } from "../actions";
 import { connect } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 function ProductPage(props) {
   console.log(props);
@@ -33,6 +34,7 @@ function ProductPage(props) {
     fetchSingleProduct();
   }, []);
 
+  const navigate = useNavigate();
   console.log(product, "product");
 
   return (
@@ -64,7 +66,7 @@ function ProductPage(props) {
                   borderRadius: "7px",
                   backgroundColor: "white",
                   height: "70vh",
-                  //   border: 1,
+                  // border: 1,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -84,7 +86,12 @@ function ProductPage(props) {
         </Box> */}
                   {/* img box */}
                   <Box
-                    sx={{ width: "30%", borderRight: 1, paddingRight: "20px" }}
+                    sx={{
+                      width: "30%",
+                      borderRight: 1,
+                      paddingRight: "20px",
+                      position: "relative",
+                    }}
                   >
                     <img
                       style={{
@@ -115,6 +122,24 @@ function ProductPage(props) {
                       >
                         <ShoppingCartIcon sx={{ marginRight: "5px" }} />
                         ADD TO CART
+                      </Button>
+                    </Box>
+
+                    <Box
+                      sx={{ position: "absolute", top: "-20px", left: "0px" }}
+                    >
+                      <Button
+                        onClick={() => {
+                          navigate("/");
+                        }}
+                        style={{
+                          textTransform: "none",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        {" "}
+                        <ChevronLeftIcon /> Back{" "}
                       </Button>
                     </Box>
                   </Box>

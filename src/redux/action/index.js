@@ -11,3 +11,10 @@ export const delItem = (product) => {
     payload: product,
   };
 };
+
+export const removeItem = (product) => {
+  return {
+    type: "REMOVEITEM",
+    payload: product,
+  };
+};
